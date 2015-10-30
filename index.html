@@ -48,10 +48,53 @@
 
     <script src="assets/scripts/vertical-rhythm.js"></script>
     <script>
-      var verticalRhythm = 26;
+      /*
+        ---------------
+        utilities
+        ---------------
+      */
+
+      // debounce function from:
+      // http://davidwalsh.name/javascript-debounce-function
+      var debounce = function(func, wait, immediate) {
+        var timeout;
+        return function() {
+          var context = this, args = arguments;
+          var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+          };
+          var callNow = immediate && !timeout;
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+          if (callNow) func.apply(context, args);
+        };
+      };
+
+      var vertRhythm = function(condition) {
+        return (condition) ? 26 : 22;
+      };
+
+
+      /*
+        ---------------
+        variables
+        ---------------
+      */
+      
+      var mq = window.matchMedia('(min-width: 600px)');
+      var verticalRhythm = vertRhythm(mq.matches);
       var imagesArray = [];
       var images = document.querySelectorAll('[data-rhythm]');
 
+
+      /*
+        ---------------
+        setup
+        ---------------
+      */
+
+      // create instance of `VerticalRhythm` for each image
       for (var i = 0, len = images.length; i < len; i++) {
         imagesArray.push(new VerticalRhythm(
           {
@@ -61,12 +104,33 @@
         ));
       }
 
-      window.addEventListener('resize', function() {
+
+      /*
+        ---------------
+        events
+        ---------------
+      */
+
+      // debounce resize event
+      var resizeImages = debounce(function() {
         imagesArray.map(function(image) {
           image.resize();
         });
+      }, 250);
+
+      // add event handler for window resize
+      window.addEventListener('resize', resizeImages);
+
+      // add event handler for media query change
+      mq.addListener(function(changed) {
+        var verticalRhythm = vertRhythm(changed.matches);
+
+        imagesArray.map(function(image) {
+          image.update(verticalRhythm);
+        });
       });
 
+      // simple handlers to hide/show vertical rhythm lines
       window.addEventListener('mousedown', function() {
         document.body.classList.add('-clear-background');
       });

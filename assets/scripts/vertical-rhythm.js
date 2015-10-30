@@ -74,6 +74,17 @@ VerticalRhythm.prototype = {
 
       this.image.style.height = clippedHeight + 'px';
     }
+  },
+
+  update: function(rhythm) {
+    this.rhythm = rhythm;
+    this.currentWidth = 0;
+
+    this.resize();
+
+    console.log(
+      this.rhythm
+    );
   }
 
 };

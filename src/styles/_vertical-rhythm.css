@@ -1,40 +1,90 @@
 body {
   background-color: #fff;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 14px;
+  line-height: var(--vertical-rhythm-sm);
+}
+
+@media (min-width: 600px) {
+  body {
+    font-size: 16px;
+    line-height: var(--vertical-rhythm-lg);
+  }
 }
 
 h1 {
-  font-size: 31px;
-  line-height: 52px;
-  margin-top: 52px;
-  margin-bottom: 26px;
+  font-size: 28px;
+  line-height: 44px;
+  margin-top: 44px;
+  margin-bottom: var(--vertical-rhythm-sm);
+}
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 31px;
+    line-height: 52px;
+    margin-top: 52px;
+    margin-bottom: var(--vertical-rhythm-lg);
+  }
 }
 
 h2 {
-  font-size: 25px;
-  line-height: 26px;
-  margin-top: 52px;
-  margin-bottom: 26px;
+  font-size: 22px;
+  line-height: var(--vertical-rhythm-sm);
+  margin-top: 44px;
+  margin-bottom: var(--vertical-rhythm-sm);
+}
+
+@media (min-width: 600px) {
+  h2 {
+    font-size: 25px;
+    line-height: var(--vertical-rhythm-lg);
+    margin-top: 52px;
+    margin-bottom: var(--vertical-rhythm-lg);
+  }
 }
 
 h3 {
-  font-size: 20px;
-  line-height: 26px;
-  margin-top: 26px;
-  margin-bottom: 26px;
+  font-size: 18px;
+  line-height: var(--vertical-rhythm-sm);
+  margin-top: var(--vertical-rhythm-sm);
+  margin-bottom: var(--vertical-rhythm-sm);
+}
+
+@media (min-width: 600px) {
+  h3 {
+    font-size: 20px;
+    line-height: var(--vertical-rhythm-lg);
+    margin-top: var(--vertical-rhythm-lg);
+    margin-bottom: var(--vertical-rhythm-lg);
+  }
 }
 
 h4 {
-  font-size: 16px;
-  line-height: 26px;
-  margin-top: 26px;
-  margin-bottom: 26px;
+  font-size: 14px;
+  line-height: var(--vertical-rhythm-sm);
+  margin-top: var(--vertical-rhythm-sm);
+  margin-bottom: var(--vertical-rhythm-sm);
+}
+
+@media (min-width: 600px) {
+  h4 {
+    font-size: 16px;
+    line-height: var(--vertical-rhythm-lg);
+    margin-top: var(--vertical-rhythm-lg);
+    margin-bottom: var(--vertical-rhythm-lg);
+  }
 }
 
 p, ul, ol, pre, table, blockquote {
-  margin-top: 26px;
-  margin-bottom: 26px;
+  margin-top: var(--vertical-rhythm-sm);
+  margin-bottom: var(--vertical-rhythm-sm);
+}
+
+@media (min-width: 600px) {
+  p, ul, ol, pre, table, blockquote {
+    margin-top: var(--vertical-rhythm-lg);
+    margin-bottom: var(--vertical-rhythm-lg);
+  }
 }
 
 /* Sanitation */

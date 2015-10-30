@@ -5,13 +5,15 @@ var autoprefixer = require('autoprefixer');
 var nano = require('gulp-cssnano');
 var cssvariables = require('postcss-css-variables');
 var atImport = require('postcss-import');
+var mqpacker = require('css-mqpacker');
 var notify = require('gulp-notify');
 
 gulp.task('styles', function () {
   var processors = [
     atImport,
     autoprefixer({browsers: ['last 3 versions', '> 1%', 'ie >= 9']}),
-    cssvariables
+    cssvariables,
+    mqpacker
   ];
 
   return gulp.src('./src/styles/index.css')

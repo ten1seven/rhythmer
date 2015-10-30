@@ -1,3 +1,4 @@
+@import '_variables.css';
 @import '_vertical-rhythm.css';
 
 *,
@@ -14,8 +15,14 @@ html {
 }
 
 body {
-  background: #fff url('../images/base--26.png') repeat top left;
+  background: #fff url('../images/base--22.png') repeat top left;
   font-family: sans-serif;
+}
+
+@media (min-width: 600px) {
+  body {
+    background-image: url('../images/base--26.png');
+  }
 }
 
 body.-clear-background {
@@ -34,7 +41,13 @@ footer {
   color: #ccc;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 26px 0;
+  padding: var(--vertical-rhythm-sm) 0;
+}
+
+@media (min-width: 600px) {
+  footer {
+    padding: var(--vertical-rhythm-lg) 0;
+  }
 }
 
 .-clear-background footer {
@@ -61,26 +74,30 @@ footer {
 .container {
   margin: 0 auto;
   max-width: 960px;
-  padding: 0 30px;
+  padding: 0 20px;
 }
 
 .left,
 .right {
   display: block;
-  margin-bottom: 26px;
+  margin-bottom: var(--vertical-rhythm-sm);
   width: 100%;
 }
 
 @media (min-width: 600px) {
+  .left,
+  .right {
+    margin-bottom: var(--vertical-rhythm-lg);
+    width: auto;
+  }
+
   .left {
     float: left;
-    margin-right: 26px;
-    width: auto;
+    margin-right: var(--vertical-rhythm-lg);
   }
 
   .right {
     float: right;
-    margin-left: 26px;
-    width: auto;
+    margin-left: var(--vertical-rhythm-lg);
   }
 }
