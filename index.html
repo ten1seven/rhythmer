@@ -81,7 +81,7 @@
         variables
         ---------------
       */
-      
+
       var mq = window.matchMedia('(min-width: 600px)');
       var verticalRhythm = vertRhythm(mq.matches);
       var imagesArray = [];
@@ -111,14 +111,13 @@
         ---------------
       */
 
-      // debounce resize event
+      // add debounced event handler for window resize
       var resizeImages = debounce(function() {
         imagesArray.map(function(image) {
           image.resize();
         });
-      }, 250);
+      }, 200);
 
-      // add event handler for window resize
       window.addEventListener('resize', resizeImages);
 
       // add event handler for media query change
