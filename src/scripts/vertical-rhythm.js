@@ -33,7 +33,7 @@ VerticalRhythm.prototype = {
     ---------------
   */
 
-  currentWidth: 0,
+  currentWidth: null,
 
   variables: function() {
     this.originalHeight = this.preloader.height;
@@ -78,7 +78,7 @@ VerticalRhythm.prototype = {
 
   update: function(rhythm) {
     this.rhythm = rhythm;
-    this.currentWidth = 0;
+    this.currentWidth = null;
 
     this.resize();
   }
