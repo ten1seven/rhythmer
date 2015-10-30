@@ -81,10 +81,6 @@ VerticalRhythm.prototype = {
     this.currentWidth = 0;
 
     this.resize();
-
-    console.log(
-      this.rhythm
-    );
   }
 
 };
