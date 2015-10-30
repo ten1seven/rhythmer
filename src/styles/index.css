@@ -37,7 +37,7 @@ h3 {
 }
 
 footer {
-  background: #222 url('../images/base--26.png') repeat top left;;
+  background: #222 url('../images/base--22.png') repeat top left;;
   color: #ccc;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -46,6 +46,7 @@ footer {
 
 @media (min-width: 600px) {
   footer {
+    background-image: url('../images/base--26.png');
     padding: var(--vertical-rhythm-lg) 0;
   }
 }
