@@ -1,0 +1,84 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff url('../images/base.png') repeat top left;
+  font-family: sans-serif;
+}
+
+body.-clear-background {
+  background: #fff;
+}
+
+h1,
+h2,
+h3 {
+  font-family: serif;
+  font-weight: 400;
+}
+
+footer {
+  background: #222 url('../images/base.png') repeat top left;;
+  color: #ccc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 26px 0;
+}
+
+.-clear-background footer {
+  background: #222;
+}
+
+.clearfix:after,
+.clearfix:before {
+	clear: both;
+	content: '';
+	display: table;
+}
+
+.hero {
+  margin-top: 0;
+}
+
+.hero img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 30px;
+}
+
+.left,
+.right {
+  display: block;
+  margin-bottom: 26px;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .left {
+    float: left;
+    margin-right: 26px;
+    width: auto;
+  }
+
+  .right {
+    float: right;
+    margin-left: 26px;
+    width: auto;
+  }
+}

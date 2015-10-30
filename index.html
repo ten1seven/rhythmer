@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vertical Rhythm with Images</title>
+
+    <link href="assets/styles/vertical-rhythm.css" rel="stylesheet">
+    <link href="assets/styles/index.css" rel="stylesheet">
+    <style>
+      [data-rhythm] {
+        object-fit: cover;
+        object-position: center center;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <p class="hero">
+      <img alt="" data-rhythm data-highsrc="assets/images/hero.jpg" src="assets/images/hero.jpg">
+    </p>
+
+    <div class="container">
+
+      <h1>Lorem ipsum dolor sit amet consectetur adipisicing</h1>
+
+      <p><img class="right" data-rhythm src="http://placehold.it/500x150">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      <h2><img class="left" data-rhythm src="http://placehold.it/150x250">Ut enim ad minim veniam</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+    </div>
+
+    <footer class="clearfix">
+      <div class="container">
+
+        <p>&copy; 2015. All rights reserved.</p>
+
+      </div>
+    </footer>
+
+    <script src="assets/scripts/vertical-rhythm.js"></script>
+    <script>
+      var verticalRhythm = 26;
+      var imagesArray = [];
+      var images = document.querySelectorAll('[data-rhythm]');
+
+      for (var i = 0, len = images.length; i < len; i++) {
+        imagesArray.push(new VerticalRhythm(
+          {
+            'image': images[i],
+            'rhythm': verticalRhythm
+          }
+        ));
+      }
+
+      window.addEventListener('resize', function() {
+        imagesArray.map(function(image) {
+          image.resize();
+        });
+      });
+
+      window.addEventListener('mousedown', function() {
+        document.body.classList.add('-clear-background');
+      });
+
+      window.addEventListener('mouseup', function() {
+        document.body.classList.remove('-clear-background');
+      });
+    </script>
+
+  </body>
+</html>
