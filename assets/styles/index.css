@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background: #fff url('../images/base.png') repeat top left;
+  background: #fff url('../images/base--26.png') repeat top left;
   font-family: sans-serif;
 }
 
@@ -28,7 +28,7 @@ h3 {
 }
 
 footer {
-  background: #222 url('../images/base.png') repeat top left;;
+  background: #222 url('../images/base--26.png') repeat top left;;
   color: #ccc;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
