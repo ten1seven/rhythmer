@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Vertical Rhythm with Images</title>
+    <title>Rhythmer</title>
 
     <link href="assets/styles/index.css" rel="stylesheet">
     <style>
@@ -46,7 +46,7 @@
       </div>
     </footer>
 
-    <script src="assets/scripts/vertical-rhythm.js"></script>
+    <script src="assets/scripts/rhythmer.js"></script>
     <script>
       /*
         ---------------
@@ -96,7 +96,7 @@
 
       // create instance of `VerticalRhythm` for each image
       for (var i = 0, len = images.length; i < len; i++) {
-        imagesArray.push(new VerticalRhythm(
+        imagesArray.push(new Rhythmer(
           {
             'image': images[i],
             'rhythm': verticalRhythm
@@ -125,7 +125,7 @@
         var verticalRhythm = vertRhythm(changed.matches);
 
         imagesArray.map(function(image) {
-          image.update(verticalRhythm);
+          image.updateRyhthm(verticalRhythm);
         });
       });
 

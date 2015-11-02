@@ -1,16 +1,16 @@
 /*
  * accepts: dom element, vertical rhythm int
- * usage: new VerticalRhythm({ image: element, rhythm: 26 });
+ * usage: new Rhythmer({ image: element, rhythm: 26 });
  */
 
-var VerticalRhythm = function(obj) {
+var Rhythmer = function(obj) {
   this.image = obj.image;
   this.rhythm = obj.rhythm;
 
   if (this.image && this.rhythm) this.init();
 };
 
-VerticalRhythm.prototype = {
+Rhythmer.prototype = {
 
   /*
     ---------------
@@ -76,7 +76,7 @@ VerticalRhythm.prototype = {
     }
   },
 
-  update: function(rhythm) {
+  updateRyhthm: function(rhythm) {
     this.rhythm = rhythm;
     this.currentWidth = null;
 
